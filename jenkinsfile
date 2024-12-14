@@ -1,5 +1,5 @@
 pipeline{
-    agent {
+    agent{
         label 'Slave2'
     }
 
@@ -8,21 +8,18 @@ pipeline{
             steps{
                 sh 'sleep 5'
             }
-
         }
-    }
 
-     stages{
-        stage('Test'){
+         stage('Test'){
             steps{
                 sh '''
-                    #!bin/bash
-                    ls -lrt
+                    #!/bin/bash
                     pwd
+                    ls -lrt
                     sleep 5
-                '''
+                '''    
+                    
             }
-
         }
     }
 }
